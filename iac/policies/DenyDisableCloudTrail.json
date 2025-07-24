@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyCloudTrailDisable",
+      "Effect": "Deny",
+      "Action": [
+        "cloudtrail:DeleteTrail",
+        "cloudtrail:StopLogging",
+        "cloudtrail:UpdateTrail"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DenyCloudTrailPolicyChanges",
+      "Effect": "Deny",
+      "Action": [
+        "iam:DeleteRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail"
+    }
+  ]
+}
