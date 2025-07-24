@@ -30,9 +30,27 @@ It demonstrates expertise in **cloud security architecture**, **infrastructure a
 ```
 .
 ├── iac/                      # Terraform for AWS Organizations, SCPs, and CloudTrail
+│    ├── main.tf                 # Primary Terraform configuration
+│    ├── variables.tf            # Configurable variables (OU names, bucket names, policy paths)
+│    ├── policies/               # Service Control Policy JSON documents
+│    │    ├── DenyDisableCloudTrail.json
+│    │    ├── DenyPublicS3.json
+│    │    ├── EnforceKMSForS3.json
+│    │    └── RestrictRegions.json
 ├── runbooks/                 # Operational runbooks for IR, DR, SCP changes, etc.
+│    ├── Disaster-Recovery-Workflow.md
+│    ├── Incident-Response-Workflow.md
+│    ├── New-Account-Onboarding.md
+│    ├── SCP-Change-Management.md
+│    ├── Security-Operations-Daily-Checklist.md
 ├── policies/                 # SCP and IAM policy JSON documents
+│    ├── IAM-CrossAccountRole.json
+│    ├── SCP-Deny-Public-S3.json
+│    ├── SCP-Require-CloudTrail.json
 ├── diagrams/                 # Architecture and workflow diagrams
+│    ├── AWS-Multi-Account-Landing-Zone-Fixed.png
+│    ├── Logging-Data-Flow.png
+│    ├── SCP-Organization-Chart.png
 ├── SECURITY.md               # Security reporting guidelines
 ├── ARCHITECTURE.md           # Architectural design and rationale
 └── README.md                 # This file
